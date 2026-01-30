@@ -3,7 +3,8 @@ const btn = document.getElementById("themeBtn");
 const themeLink = document.getElementById("theme-style");
 
 function setButtonText(theme) {
-  btn.textContent = theme === "dark" ? "Dark" : "Light";
+  // btn.textContent = theme === "dark" ? "Dark" : "Light";
+  btn.innerHTML = theme === "dark" ? "&lt;Dark/&gt;" : "&lt;Light/&gt;";
 }
 
 // Page load par (default dark)
