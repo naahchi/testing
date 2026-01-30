@@ -21,16 +21,22 @@ h2{
     text-decoration: none;
     color: black;
     font-family: monospace;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
 }
 .top_nav button{
     text-transform: capitalize;
+    font-family: monospace;
     font-size: 14px;
+    font-weight: bold;
     margin-left: auto;
     background-color: transparent;
-    padding: 2.5px 10px;
-    border-radius: 5px;
+    padding: 2.5px 0;
+    /* border-radius: 5px; */
+    border-right: none;
+    border-left: none;
 }
 .bottom_nav{
     position: fixed;
