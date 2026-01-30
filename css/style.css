@@ -51,9 +51,9 @@ h2{
     font-size: 14px;
     font-weight: bold;
     color: black;
-    padding: 3px 0;
-    border-top: 2px dashed;
-    border-bottom: 2px dashed;
+    padding: 2.5px 0;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
     /* border: 2px solid black; */
     /* border-radius: 5px; */
 }
