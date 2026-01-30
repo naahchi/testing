@@ -6,18 +6,6 @@ h2{
     text-align: center;
     padding: 10px;
 }
-/* .top_nav{
-    width: 100%;
-    height: 45px;
-    position: fixed;
-    top: 0;
-    display: flex;
-    align-items: center;
-    z-index: 99;
-    padding: 0 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-} */
 .top_nav{
     position: sticky;
     top: 0;
@@ -37,26 +25,12 @@ h2{
 }
 .top_nav button{
     text-transform: capitalize;
-    /* font-size: 14px; */
+    font-size: 14px;
     margin-left: auto;
     background-color: transparent;
     padding: 2.5px 10px;
     border-radius: 5px;
 }
-
-/* .bottom_nav{
-    width: 100%;
-    height: 45px;
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    z-index: 99;
-    padding: 0 10px;
-    justify-content: space-between;
-    background-color: #fff;
-    box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.26);
-} */
 .bottom_nav{
     position: fixed;
     bottom: 0;
@@ -66,16 +40,17 @@ h2{
     padding: 0 10px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: white;
     box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 .bottom_nav a{
     text-decoration: none;
+    font-size: 14px;
     color: black;
-    padding: 2.5px 10px;
-    border: 2px solid black;
-    border-radius: 5px;
+    padding: 2.5px 7.5px;
+    border: 1px solid black;
+    border-radius: 2.5px;
 }
 main{
     min-height: 100dvh;
