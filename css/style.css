@@ -26,12 +26,16 @@ h2{
     border-top: 2px solid;
     border-bottom: 2px solid;
 }
+.top_nav_box {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
 .top_nav button{
     text-transform: capitalize;
     font-family: monospace;
     font-size: 14px;
     font-weight: bold;
-    margin-left: auto;
     background-color: transparent;
     padding: 2.5px 0;
     /* border-radius: 5px; */
@@ -51,7 +55,7 @@ h2{
     background-color: white;
     box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.26);
 }
-.bottom_nav a{
+.bottom_nav a, .top_login_btn{
     text-decoration: none;
     font-family: monospace;
     font-size: 14px;
