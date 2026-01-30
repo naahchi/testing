@@ -48,10 +48,12 @@ h2{
 .bottom_nav a{
     text-decoration: none;
     font-family: monospace;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     color: black;
-    padding: 10px 0;
+    padding: 3px 0;
+    border-top: 2px dashed;
+    border-bottom: 2px dashed;
     /* border: 2px solid black; */
     /* border-radius: 5px; */
 }
