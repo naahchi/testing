@@ -1,10 +1,24 @@
-{% if site.comingsoon == true %}
+<!-- {% if site.comingsoon == true %}
   {% unless page.private == true or page.url == "/coming-soon/" %}
     <script>
       window.location.href = "/coming-soon/";
     </script>
   {% endunless %}
-{% endif %}
+{% endif %} -->
+{%- if site.comingsoon == true -%}
+  {%- unless page.private == true or page.url == "/coming-soon/" -%}
+    <script>
+      window.location.href = "/coming-soon/";
+    </script>
+  {%- endunless -%}
+
+{%- elsif site.maintenance == true -%}
+  {%- unless page.private == true or page.url == "/site-maintenance/" -%}
+    <script>
+      window.location.href = "/site-maintenance/";
+    </script>
+  {%- endunless -%}
+{%- endif -%}
 
 <!DOCTYPE html>
 <html lang="en">
