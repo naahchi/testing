@@ -2,6 +2,11 @@
 .blank{
     height: 45px;
 }
+h1{
+    font-size: 22px;
+    text-align: center;
+    padding: 10px;
+}
 h2{
     text-align: center;
     padding: 10px;
@@ -69,7 +74,7 @@ h2{
 }
 main{
     min-height: 100dvh;
-    padding: 0 10px;
+    padding: 50px 10px;
 }
 footer{
     text-align: center;
