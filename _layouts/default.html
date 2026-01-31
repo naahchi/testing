@@ -6,13 +6,13 @@
   {% endunless %}
 {% endif %} -->
 {%- if site.comingsoon == false -%}
-  {%- unless page.comingsoon == true or page.url == "/coming-soon/" -%}
+  {%- unless page.private == true or page.url == "/coming-soon/" -%}
     <script>
       window.location.href = "/coming-soon/";
     </script>
   {%- endunless -%}
 
-{%- elsif site.maintenance == true -%}
+{%- elsif site.maintenance == false -%}
   {%- unless page.private == true or page.url == "/site-maintenance/" -%}
     <script>
       window.location.href = "/site-maintenance/";
