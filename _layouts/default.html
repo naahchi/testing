@@ -5,7 +5,7 @@
     </script>
   {% endunless %}
 {% endif %} -->
-{%- if site.comingsoon == true -%}
+{%- if site.comingsoon == false -%}
   {%- unless page.private == true or page.url == "/coming-soon/" -%}
     <script>
       window.location.href = "/coming-soon/";
