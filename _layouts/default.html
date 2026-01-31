@@ -1,3 +1,11 @@
+{% if site.comingsoon == true %}
+  {% unless page.private == true or page.url == "/comingsoon.html" %}
+    <script>
+      window.location.href = "/comingsoon.html";
+    </script>
+  {% endunless %}
+{% endif %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
