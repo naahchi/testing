@@ -14,9 +14,10 @@
         })();
     </script>
     <title>{{ page.title }}</title>
-    {% if page.url == "/404.html" %}
+    <meta name="robots" content="{{ index }},{{ follow }}">
+    <!-- {% if page.url == "/404.html" %}
         <meta name="robots" content="noindex,nofollow">
-    {% endif %}
+    {% endif %} -->
     <script defer src="/js/main.js"></script>
     <link rel="stylesheet" href="/css/style.css">
 </head>
