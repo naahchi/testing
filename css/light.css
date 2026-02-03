@@ -3,3 +3,21 @@ body{
     color: black;
     transition: background 0.3s, color 0.3s
 }
+.top_nav{
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.logo{
+    color: #000;
+}
+.bottom_nav{
+    background-color: white;
+    box-shadow: 0 -2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+.top_nav_box a, .bottom_nav a{
+    color: black;
+}
+footer{
+    background-color: rgb(74, 74, 74);
+    color: #dddddd;
+}
