@@ -23,11 +23,7 @@
 <body>
   {% include header.html %}
   <main>
-    {% if page.comingsoon == true %}
-      {% include comingsoon.html %}
-    {% else %}
-      {{ content }}
-    {% endif %}
+    {{ content }}
   </main>
   {% include footer.html %} 
 </body>
