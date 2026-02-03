@@ -1,11 +1,3 @@
-<!-- {% if site.comingsoon == true %}
-  {% unless page.private == true or page.url == "/coming-soon/" %}
-    <script>
-      window.location.href = "/coming-soon/";
-    </script>
-  {% endunless %}
-{% endif %} -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,28 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
         (function () {
-            // const theme = localStorage.getItem("theme") || "dark";
-            const theme = localStorage.getItem("theme") || "light"; // 👈 default LIGHT
+            const theme = localStorage.getItem("theme") || "light";
             const link = document.createElement("link");
             link.rel = "stylesheet";
             link.id = "theme-style";
-            // link.href = theme === "dark" ? "dark.css" : "light.css";
             link.href = theme === "light" ? "/css/light.css" : "/css/dark.css";
             document.head.appendChild(link);
         })();
     </script>
-    <!-- <script>
-        // ==========
-        (function () {
-            const theme = localStorage.getItem("theme") || "dark"; // 👈 default DARK
-            const link = document.createElement("link");
-            link.rel = "stylesheet";
-            link.id = "theme-style";
-            link.href = theme === "dark" ? "/css/dark.css" : "/css/light.css";
-            document.head.appendChild(link);
-        })();
-        // ==========
-    </script> -->
     <title>{{ page.title }}</title>
     {% if page.url == "/404.html" %}
         <meta name="robots" content="noindex,nofollow">
@@ -45,7 +23,12 @@
 <body>
   {% include header.html %}
   <main>
-    {{ content }}
+    <!-- {{ content }} -->
+    {% if page.comingsoon == true %}
+      {% include comingsoon.html %}
+    {% else %}
+      {{ content }}
+    {% endif %}
   </main>
   {% include footer.html %} 
 </body>
