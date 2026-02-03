@@ -12,6 +12,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>
+        (function () {
+            // const theme = localStorage.getItem("theme") || "dark";
+            const theme = localStorage.getItem("theme") || "light"; // 👈 default LIGHT
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.id = "theme-style";
+            // link.href = theme === "dark" ? "dark.css" : "light.css";
+            link.href = theme === "light" ? "light.css" : "dark.css";
+            document.head.appendChild(link);
+        })();
+    </script>
+    <!-- <script>
         // ==========
         (function () {
             const theme = localStorage.getItem("theme") || "dark"; // 👈 default DARK
@@ -22,7 +34,7 @@
             document.head.appendChild(link);
         })();
         // ==========
-    </script>
+    </script> -->
     <title>{{ page.title }}</title>
     {% if page.url == "/404.html" %}
         <meta name="robots" content="noindex,nofollow">
