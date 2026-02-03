@@ -17,7 +17,7 @@ btn.addEventListener("click", () => {
   // currentTheme = currentTheme === "dark" ? "light" : "dark";
   currentTheme = currentTheme === "light" ? "dark" : "light";
   // themeLink.href = currentTheme === "dark" ? "dark.css" : "light.css";
-  themeLink.href = currentTheme === "light" ? "css/light.css" : "css/dark.css";
+  themeLink.href = currentTheme === "light" ? "/css/light.css" : "/css/dark.css";
   localStorage.setItem("theme", currentTheme);
   setButtonText(currentTheme);
 });
