@@ -10,8 +10,7 @@ import {
 // 🔹 Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
-  authDomain: "naahchi.github.io",
-  // authDomain: "codemoney-80939.firebaseapp.com",
+  authDomain: "codemoney-80939.firebaseapp.com",
   projectId: "codemoney-80939",
   appId: "1:243691822378:web:5ddf9db3945714d032d253"
 };
