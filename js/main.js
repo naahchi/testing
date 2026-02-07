@@ -11,7 +11,7 @@ import {
    1️⃣ Firebase Config (CORRECT)
    =============================== */
 const firebaseConfig = {
-  apiKey: "AIzaSyCitBwXm_HF5_tYP1wyyX8sXAs7sH-Pt0A",
+  apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
   authDomain: "codemoney-80939.firebaseapp.com",
   projectId: "codemoney-80939",
   appId: "1:243691822378:web:5ddf9db3945714d032d253"
