@@ -31,7 +31,7 @@ getRedirectResult(auth)
   .then((result) => {
     if (result && result.user) {
       console.log("Redirect success:", result.user.email);
-      window.location.replace("/dashboard.html");
+      location.replace("/dashboard.html");
     }
   })
   .catch((error) => {
@@ -44,7 +44,7 @@ getRedirectResult(auth)
 onAuthStateChanged(auth, (user) => {
   if (user) {
     console.log("User already logged in:", user.email);
-    window.location.replace("/dashboard.html");
+    location.replace("/dashboard.html");
   }
 });
 
