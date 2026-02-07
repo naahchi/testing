@@ -32,7 +32,7 @@ document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log("Login success:", result.user.email);
-        window.location.href = "/dashboard";
+        window.location.href = "/dashboard/";
       })
       .catch((error) => {
         console.error(error);
@@ -45,7 +45,7 @@ getRedirectResult(auth)
   .then((result) => {
     if (result && result.user) {
       console.log("Redirect login success:", result.user.email);
-      window.location.href = "/dashboard";
+      window.location.href = "/dashboard/";
     }
   })
   .catch((error) => {
