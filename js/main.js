@@ -1,11 +1,14 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { initializeApp } from
+"https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
 import {
   getAuth,
   GoogleAuthProvider,
   signInWithRedirect,
   getRedirectResult,
   onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+} from
+"https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
 
 /* ===============================
    1️⃣ Firebase Config (CORRECT)
@@ -48,7 +51,7 @@ onAuthStateChanged(auth, (user) => {
 /* =================================================
    4️⃣ GOOGLE LOGIN BUTTON (ONLY REDIRECT)
    ================================================= */
-document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
+document.getElementById("googleLoginBtn").addEventListener("click", () => {
     signInWithRedirect(auth, provider);
 });
 
