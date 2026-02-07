@@ -10,7 +10,7 @@ import {
 
 // 🔹 Firebase config (YE BILKUL SAHI HAI)
 const firebaseConfig = {
-  apiKey: "AIzaSyCitBwXm_HF5_tYP1wyyX8sXAs7sH-Pt0A",
+  apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
   authDomain: "codemoney-80939.firebaseapp.com",
   projectId: "codemoney-80939",
   appId: "1:243691822378:web:5ddf9db3945714d032d253"
@@ -27,7 +27,7 @@ getRedirectResult(auth)
   .then((result) => {
     if (result && result.user) {
       console.log("Redirect login success:", result.user.email);
-      window.location.href = "/dashboard.html";
+      window.location.href = "/dashboard";
     }
   })
   .catch((error) => {
@@ -42,7 +42,7 @@ onAuthStateChanged(auth, (user) => {
     console.log("Already logged in:", user.email);
     // Agar already login hai to login page par mat rakho
     if (location.pathname.includes("login")) {
-      window.location.href = "/dashboard.html";
+      window.location.href = "/dashboard";
     }
   }
 });
@@ -59,7 +59,7 @@ document.getElementById("googleLoginBtn").addEventListener("click", () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log("Popup login success:", result.user.email);
-        window.location.href = "/dashboard.html";
+        window.location.href = "/dashboard";
       })
       .catch(console.error);
   }
