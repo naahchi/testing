@@ -3,7 +3,19 @@ layout: default
 permalink: /dashboard/
 title: Codemoney Dashboard
 <!-- comingsoon: true -->
-<!-- robots: noindex,follow -->
+robots: noindex,nofollow
 ---
+
+<script type="module">
+  import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      window.location.href = "/login";
+    }
+  });
+</script>
 
 <h1>Dashboard</h1>
