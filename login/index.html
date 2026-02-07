@@ -10,7 +10,7 @@ title: Codemoney Login
     import { getAuth, onAuthStateChanged } from
     "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
     
-    const auth = getAuth();
+    const auth = getAuths();
     
     onAuthStateChanged(auth, (user) => {
       console.log("AUTH STATE CHECK:", user);
