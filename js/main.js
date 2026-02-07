@@ -1,3 +1,59 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import {
+  getAuth,
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult
+} from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+// 🔹 Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
+  authDomain: "codemoney-80939.firebaseapp.com",
+  projectId: "codemoney-80939",
+  appId: "1:243691822378:web:5ddf9db3945714d032d253"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+// 🔹 Simple mobile detect
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+// 🔹 Button click
+document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
+  if (isMobile) {
+    // 📱 Mobile → redirect
+    signInWithRedirect(auth, provider);
+  } else {
+    // 💻 Desktop → popup
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log("Login success:", result.user.email);
+        window.location.href = "/dashboard.html";
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+});
+
+// 🔹 Redirect result (mobile ke liye)
+getRedirectResult(auth)
+  .then((result) => {
+    if (result && result.user) {
+      console.log("Redirect login success:", result.user.email);
+      window.location.href = "/dashboard.html";
+    }
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+
+
 // ============
 const btn = document.getElementById("themeBtn");
 const themeLink = document.getElementById("theme-style");
