@@ -23,59 +23,59 @@ title: Codemoney Login
 
 
     
-    // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
-    // import {
-    //   getAuth,
-    //   GoogleAuthProvider,
-    //   signInWithRedirect,
-    //   getRedirectResult,
-    //   onAuthStateChanged
-    // } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+    import {
+      getAuth,
+      GoogleAuthProvider,
+      signInWithRedirect,
+      getRedirectResult,
+      onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
     
-    // /* ===============================
-    //    1️⃣ Firebase Config (CORRECT)
-    //    =============================== */
-    // const firebaseConfig = {
-    //   apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
-    //   authDomain: "codemoney-80939.firebaseapp.com",
-    //   projectId: "codemoney-80939",
-    //   appId: "1:243691822378:web:5ddf9db3945714d032d253"
-    // };
+    /* ===============================
+       1️⃣ Firebase Config (CORRECT)
+       =============================== */
+    const firebaseConfig = {
+      apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
+      authDomain: "codemoney-80939.firebaseapp.com",
+      projectId: "codemoney-80939",
+      appId: "1:243691822378:web:5ddf9db3945714d032d253"
+    };
     
-    // const app = initializeApp(firebaseConfig);
-    // const auth = getAuth(app);
-    // const provider = new GoogleAuthProvider();
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
     
-    // /* =================================================
-    //    2️⃣ HANDLE REDIRECT RESULT (PAGE LOAD PE – MUST)
-    //    ================================================= */
-    // getRedirectResult(auth)
-    //   .then((result) => {
-    //     if (result && result.user) {
-    //       console.log("Redirect success:", result.user.email);
-    //       window.location.replace("/dashboard.html");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error("Redirect error:", error.code, error.message);
-    //   });
+    /* =================================================
+       2️⃣ HANDLE REDIRECT RESULT (PAGE LOAD PE – MUST)
+       ================================================= */
+    getRedirectResult(auth)
+      .then((result) => {
+        if (result && result.user) {
+          console.log("Redirect success:", result.user.email);
+          window.location.replace("/dashboard.html");
+        }
+      })
+      .catch((error) => {
+        console.error("Redirect error:", error.code, error.message);
+      });
     
-    // /* =================================================
-    //    3️⃣ AUTH STATE CHECK (SAFETY NET)
-    //    ================================================= */
-    // onAuthStateChanged(auth, (user) => {
-    //   if (user) {
-    //     console.log("User already logged in:", user.email);
-    //     window.location.replace("/dashboard.html");
-    //   }
-    // });
+    /* =================================================
+       3️⃣ AUTH STATE CHECK (SAFETY NET)
+       ================================================= */
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log("User already logged in:", user.email);
+        window.location.replace("/dashboard.html");
+      }
+    });
     
-    // /* =================================================
-    //    4️⃣ GOOGLE LOGIN BUTTON (ONLY REDIRECT)
-    //    ================================================= */
-    // document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
-    //     signInWithRedirect(auth, provider);
-    // });
+    /* =================================================
+       4️⃣ GOOGLE LOGIN BUTTON (ONLY REDIRECT)
+       ================================================= */
+    document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
+        signInWithRedirect(auth, provider);
+    });
 </script>
 
 <h1>Login</h1>
