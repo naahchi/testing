@@ -48,11 +48,9 @@ onAuthStateChanged(auth, (user) => {
 /* =================================================
    4️⃣ GOOGLE LOGIN BUTTON (ONLY REDIRECT)
    ================================================= */
-document
-  .getElementById("googleLoginBtn")?
-  .addEventListener("click", () => {
+document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
     signInWithRedirect(auth, provider);
-  });
+});
 
 
 
