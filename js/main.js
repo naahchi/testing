@@ -2,15 +2,16 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebas
 import {
   getAuth,
   GoogleAuthProvider,
-  signInWithPopup,
   signInWithRedirect,
   getRedirectResult,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
 
-// 🔹 Firebase config (YE BILKUL SAHI HAI)
+/* ===============================
+   1️⃣ Firebase Config (CORRECT)
+   =============================== */
 const firebaseConfig = {
-  apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
+  apiKey: "AIzaSyCitBwXm_HF5_tYP1wyyX8sXAs7sH-Pt0A",
   authDomain: "codemoney-80939.firebaseapp.com",
   projectId: "codemoney-80939",
   appId: "1:243691822378:web:5ddf9db3945714d032d253"
@@ -20,50 +21,110 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-/* ===================================================
-   🔥 1️⃣ HANDLE REDIRECT RESULT (PAGE LOAD PE)
-   =================================================== */
+/* =================================================
+   2️⃣ HANDLE REDIRECT RESULT (PAGE LOAD PE – MUST)
+   ================================================= */
 getRedirectResult(auth)
   .then((result) => {
     if (result && result.user) {
-      console.log("Redirect login success:", result.user.email);
-      window.location.href = "/dashboard";
+      console.log("Redirect success:", result.user.email);
+      window.location.replace("/dashboard.html");
     }
   })
   .catch((error) => {
-    console.error("Redirect error:", error);
+    console.error("Redirect error:", error.code, error.message);
   });
 
-/* ===================================================
-   🔥 2️⃣ EXTRA SAFETY: auth state listener
-   =================================================== */
+/* =================================================
+   3️⃣ AUTH STATE CHECK (SAFETY NET)
+   ================================================= */
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("Already logged in:", user.email);
-    // Agar already login hai to login page par mat rakho
-    if (location.pathname.includes("login")) {
-      window.location.href = "/dashboard";
-    }
+    console.log("User already logged in:", user.email);
+    window.location.replace("/dashboard.html");
   }
 });
 
-/* ===================================================
-   🔹 3️⃣ LOGIN BUTTON
-   =================================================== */
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
-  if (isMobile) {
+/* =================================================
+   4️⃣ GOOGLE LOGIN BUTTON (ONLY REDIRECT)
+   ================================================= */
+document
+  .getElementById("googleLoginBtn")
+  .addEventListener("click", () => {
     signInWithRedirect(auth, provider);
-  } else {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        console.log("Popup login success:", result.user.email);
-        window.location.href = "/dashboard";
-      })
-      .catch(console.error);
-  }
-});
+  });
+
+
+
+
+
+
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+// import {
+//   getAuth,
+//   GoogleAuthProvider,
+//   signInWithPopup,
+//   signInWithRedirect,
+//   getRedirectResult,
+//   onAuthStateChanged
+// } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+
+// // 🔹 Firebase config (YE BILKUL SAHI HAI)
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCitBwXw_HF5_tYPIwyyX8sXAs7sH-Pt0A",
+//   authDomain: "codemoney-80939.firebaseapp.com",
+//   projectId: "codemoney-80939",
+//   appId: "1:243691822378:web:5ddf9db3945714d032d253"
+// };
+
+// const app = initializeApp(firebaseConfig);
+// const auth = getAuth(app);
+// const provider = new GoogleAuthProvider();
+
+// /* ===================================================
+//    🔥 1️⃣ HANDLE REDIRECT RESULT (PAGE LOAD PE)
+//    =================================================== */
+// getRedirectResult(auth)
+//   .then((result) => {
+//     if (result && result.user) {
+//       console.log("Redirect login success:", result.user.email);
+//       window.location.href = "/dashboard";
+//     }
+//   })
+//   .catch((error) => {
+//     console.error("Redirect error:", error);
+//   });
+
+// /* ===================================================
+//    🔥 2️⃣ EXTRA SAFETY: auth state listener
+//    =================================================== */
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     console.log("Already logged in:", user.email);
+//     // Agar already login hai to login page par mat rakho
+//     if (location.pathname.includes("login")) {
+//       window.location.href = "/dashboard";
+//     }
+//   }
+// });
+
+// /* ===================================================
+//    🔹 3️⃣ LOGIN BUTTON
+//    =================================================== */
+// const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+// document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
+//   if (isMobile) {
+//     signInWithRedirect(auth, provider);
+//   } else {
+//     signInWithPopup(auth, provider)
+//       .then((result) => {
+//         console.log("Popup login success:", result.user.email);
+//         window.location.href = "/dashboard";
+//       })
+//       .catch(console.error);
+//   }
+// });
 
 
 
