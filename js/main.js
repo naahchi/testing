@@ -52,7 +52,7 @@ onAuthStateChanged(auth, (user) => {
    =================================================== */
 const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-document.getElementById("googleLoginBtn").addEventListener("click", () => {
+document.getElementById("googleLoginBtn")?.addEventListener("click", () => {
   if (isMobile) {
     signInWithRedirect(auth, provider);
   } else {
