@@ -1,3 +1,6 @@
 <footer>
-  <p>© 2026 codemoney.in</p>
+  <p>© <span id="year"></span> codemoney.in</p>
 </footer>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
