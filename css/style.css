@@ -76,7 +76,7 @@ h2{
     padding: 4px 10px;
 }
 main{
-    min-height: calc(100dvh - 135px);
+    min-height: calc(100dvh - 95px);
     padding: 0 10px;
 }
 
