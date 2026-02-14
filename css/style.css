@@ -28,7 +28,7 @@ h1{
 }
 
 main{
-    min-height: calc(100dvh - 130px);
+    min-height: calc(100dvh - 120px);
     /* padding: 0 100px; */
     padding: 0 calc(100% - 93%);
     margin: 15px 0;
