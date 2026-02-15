@@ -34,24 +34,25 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 <script>
-document.getElementById("buyBtn")?.onclick = function () {
-
-  var options = {
-    "key": "rzp_test_SGTYFSjKPV0Gd3",
-    "amount": "499",
-    "currency": "INR",
-    "name": "Codemoney",
-    "description": "Donation",
-
-    "handler": function (response){
-        alert("Donation Successful!");
-        console.log(response);
-    }
-  };
-
-  var rzp = new Razorpay(options);
-  rzp.open();
-};
+var buyBtn = document.getElementById("buyBtn");
+if (buyBtn) {
+    buyBtn.onclick = function () {
+      var options = {
+        "key": "rzp_test_SGTYFSjKPV0Gd3",
+        "amount": "49900",
+        "currency": "INR",
+        "name": "Codemoney",
+        "description": "Donation",
+    
+        "handler": function (response){
+            alert("Donation Successful!");
+            console.log(response);
+        }
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+    };
+}
 </script>
     <!-- <script type="module" src="/js/main.js"></script> -->
 </body>
