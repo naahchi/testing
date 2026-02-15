@@ -56,6 +56,21 @@ main > * {
     z-index: 2;
 }
 
+.donate_btn{
+    all: unset;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 25px;
+}
+
+.donate_btn:active{
+    background-color: gray;
+    scale: 0.9;
+}
+
 p{
     margin: 10px 0;
 }
